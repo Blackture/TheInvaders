@@ -118,7 +118,7 @@ namespace CardBattle.Networking
                     float x = -size * Mathf.Sqrt(3) * (r + q / 2.0f);
                     float y = size * 3 / 2.0f * q;
                     GameObject g = (GameObject)Resources.Load("hexagon field");
-                    GameObject i = Instantiate(g, transform);
+                    GameObject i = Instantiate(g, transform); //Needs to be changed to work with networking!!!
 
                     i.transform.localPosition = new Vector3(stackPositions[nextStack].x, 0.3f * Mathf.Floor(HexagonalFields.Count / 7) - 0.1f, stackPositions[nextStack].y);
                     nextStack += (nextStack + 1 > 6) ? -6 : 1;
