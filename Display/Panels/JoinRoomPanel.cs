@@ -10,9 +10,10 @@ namespace CardBattle.Display.Panels
         public TMP_InputField roomNameInput;
         public TMP_InputField nameInput;
         public Button BnJoin;
+        public Button BnJoinRandom;
 
         private List<GameObject> menuItems;
-        private bool isActive = false;
+        private bool isActive = true;
 
         private List<GameObject> GetMenuItems()
         {
@@ -20,6 +21,9 @@ namespace CardBattle.Display.Panels
             {
                 BnJoin.transform.Find("Text").gameObject,
                 BnJoin.transform.Find("Loading").gameObject,
+
+                BnJoinRandom.transform.Find("Text").gameObject,
+                BnJoinRandom.transform.Find("Loading").gameObject,
 
                 roomNameInput.transform.Find("Text Area").gameObject,
                 roomNameInput.transform.Find("Loading").gameObject,

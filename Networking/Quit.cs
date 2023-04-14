@@ -14,25 +14,29 @@ namespace CardBattle.Networking
 
         public void ExitRoom()
         {
-            StopAllCoroutines();
-            if (PhotonNetwork.InRoom)
-            {
-                if (PhotonNetwork.IsMasterClient)
-                {
-                    Destroy(GameObject.Find("Create And Join Rooms"));
-                }
+            GameObject.Find("NetworkManager").GetComponent<NetworkManager>().LeaveMatch();
+            //StopAllCoroutines();
+            //if (PhotonNetwork.InRoom)
+            //{
+            //    if (PhotonNetwork.IsMasterClient)
+            //    {
+            //        Destroy(GameObject.Find("Create And Join Rooms"));
+            //    }
 
-                if (PhotonNetwork.InRoom) PhotonNetwork.LeaveRoom();
+            //    GameObject[] gs = GameObject.FindGameObjectsWithTag("Enviro");
+            //    foreach (GameObject g in gs) { Destroy(g); }
 
-                if (PhotonNetwork.InLobby) PhotonNetwork.LeaveLobby();
+            //    if (PhotonNetwork.InRoom) PhotonNetwork.LeaveRoom();
 
-                if (PhotonNetwork.IsConnected)
-                {
-                    backToLobby = true;
-                    quit = false;
-                    PhotonNetwork.Disconnect();
-                }
-            }
+            //    if (PhotonNetwork.InLobby) PhotonNetwork.LeaveLobby();
+
+            //    if (PhotonNetwork.IsConnected)
+            //    {
+            //        backToLobby = true;
+            //        quit = false;
+            //        PhotonNetwork.Disconnect();
+            //    }
+            //}
         }
 
         public void Exit()

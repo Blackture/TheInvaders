@@ -45,10 +45,10 @@ namespace CardBattle.Core
         S
     }
 
-    public enum GAMEMODE
+    public enum MatchType
     {
-        QUICKMATCH,
-        NORMAL
+        Quickmatch,
+        Normal
     }
 
     public enum DIFFICULTY

@@ -17,7 +17,7 @@ namespace CardBattle.Core
         public List<Player> players = new List<Player>();
         public AI.Bot bot;
 
-        public GAMEMODE gamemode;
+        public MatchType gamemode;
         public DIFFICULTY difficulty;
 
         public void Awake()
@@ -39,7 +39,7 @@ namespace CardBattle.Core
 
         }
 
-        public void Initiate(GAMEMODE gamemode)
+        public void Initiate(MatchType gamemode)
         {
             this.gamemode = gamemode;
         }

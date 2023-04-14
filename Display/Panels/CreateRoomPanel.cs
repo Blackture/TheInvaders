@@ -14,7 +14,7 @@ namespace CardBattle.Display.Panels
         public Button BnCreate;
 
         private List<GameObject> menuItems;
-        private bool isActive = false;
+        private bool isActive = true;
 
         private List<GameObject> GetMenuItems()
         {

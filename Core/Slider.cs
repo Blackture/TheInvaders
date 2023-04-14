@@ -4,6 +4,7 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.Events;
 
 namespace CardBattle.Core
 {
@@ -11,11 +12,13 @@ namespace CardBattle.Core
     {
         [SerializeField] private Button left;
         [SerializeField] private Button right;
-        [SerializeField] private Transform textArea;
+        public Transform textArea;
         [SerializeField] private int current;
         [SerializeField] private bool updateAtStart = true;
 
         [SerializeField] private string[] items;
+        public UnityEvent<string> onValueChangedS = new UnityEvent<string>();
+        public UnityEvent<int> onValueChangedI = new UnityEvent<int>();
 
         // Start is called before the first frame update
         void Start()
@@ -41,6 +44,8 @@ namespace CardBattle.Core
 
             textArea.Find("Placeholder").gameObject.SetActive(false);
             textArea.Find("Text").GetComponent<TMP_Text>().SetText(items[current]);
+            onValueChangedS.Invoke(items[current]);
+            onValueChangedI.Invoke(current);
         }
 
         /// <summary>
